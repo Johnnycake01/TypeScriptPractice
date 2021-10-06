@@ -39,7 +39,7 @@ class User {
 //inheritance
 class Admin extends User {
   adminId: number;
-  PrintAllUserInformation() {
+  PrintAllUserInformation() {//method overiding
     if (this.adminId !== undefined) {
       console.log(`Admin Id is ${this.adminId}`);
     }
