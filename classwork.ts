@@ -38,22 +38,21 @@ class User {
 
 //inheritance
 class Admin extends User {
-
   adminId: number;
   PrintAllUserInformation() {
     if (this.adminId !== undefined) {
-      console.log(`Admin Id${this.adminId}`);
+      console.log(`Admin Id is ${this.adminId}`);
     }
     console.log(`first name is ${this.name.firstName}`);
     console.log(`last name is ${this.name.lastName}`);
     console.log(`age is ${this.age}`);
     console.log(`gender is ${this.gender}`);
-        if (this.status !== undefined) {
-          console.log(`status is ${this.status}`);
-        }
-        if (this.date !== undefined) {
-          console.log(`date of birth is ${this.date}`);
-        }
+    if (this.status !== undefined) {
+      console.log(`status is ${this.status}`);
+    }
+    if (this.date !== undefined) {
+      console.log(`date of birth is ${this.date}`);
+    }
   }
 }
 
@@ -62,7 +61,7 @@ class Admin extends User {
 let userJohnson = new User({ firstName: "Johnson", lastName: "Oyesina" }, 20, "male")
 
 //print out incomplete details
-console.log("=============print incomplete details=================")
+console.log("=============print incomplete user details=================")
 console.log();
 console.log("===full name===");
 console.log();
@@ -78,7 +77,7 @@ console.log();
 
 
 //print out complete details
-console.log("=============print complete details=================");
+console.log("=============print complete user details=================");
 userJohnson.status = "Single"
 userJohnson.date = "10th of March"
 console.log();
@@ -88,3 +87,40 @@ console.log();
 console.log();
 console.log("===complete details====");
 userJohnson.PrintAllUserInformation();
+
+
+console.log();
+console.log();
+console.log();
+console.log();
+//creating object of Admin
+let adminOsehi = new Admin({ firstName: "Osehi", lastName: "Android" }, 22, "male")
+
+//print out incomplete details
+console.log("=============print incomplete admin details=================")
+console.log();
+console.log("===full name===");
+console.log();
+adminOsehi.PrintFullName()
+console.log();
+console.log();
+console.log("===incomplete details====");
+adminOsehi.PrintAllUserInformation()
+console.log();
+console.log();
+console.log();
+
+
+
+//print out complete details
+console.log("=============print complete admin details=================");
+adminOsehi.status = "Married"
+adminOsehi.date = "25th of December"
+adminOsehi.adminId = 24
+console.log();
+console.log("===full name===");
+adminOsehi.PrintFullName();
+console.log();
+console.log();
+console.log("===complete details====");
+adminOsehi.PrintAllUserInformation();

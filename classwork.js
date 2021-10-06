@@ -44,7 +44,7 @@ var Admin = /** @class */ (function (_super) {
     }
     Admin.prototype.PrintAllUserInformation = function () {
         if (this.adminId !== undefined) {
-            console.log("Admin Id" + this.adminId);
+            console.log("Admin Id is " + this.adminId);
         }
         console.log("first name is " + this.name.firstName);
         console.log("last name is " + this.name.lastName);
@@ -62,7 +62,7 @@ var Admin = /** @class */ (function (_super) {
 //creating object of user
 var userJohnson = new User({ firstName: "Johnson", lastName: "Oyesina" }, 20, "male");
 //print out incomplete details
-console.log("=============print incomplete details=================");
+console.log("=============print incomplete user details=================");
 console.log();
 console.log("===full name===");
 console.log();
@@ -75,7 +75,7 @@ console.log();
 console.log();
 console.log();
 //print out complete details
-console.log("=============print complete details=================");
+console.log("=============print complete user details=================");
 userJohnson.status = "Single";
 userJohnson.date = "10th of March";
 console.log();
@@ -85,3 +85,34 @@ console.log();
 console.log();
 console.log("===complete details====");
 userJohnson.PrintAllUserInformation();
+console.log();
+console.log();
+console.log();
+console.log();
+//creating object of Admin
+var adminOsehi = new Admin({ firstName: "Osehi", lastName: "Android" }, 22, "male");
+//print out incomplete details
+console.log("=============print incomplete admin details=================");
+console.log();
+console.log("===full name===");
+console.log();
+adminOsehi.PrintFullName();
+console.log();
+console.log();
+console.log("===incomplete details====");
+adminOsehi.PrintAllUserInformation();
+console.log();
+console.log();
+console.log();
+//print out complete details
+console.log("=============print complete admin details=================");
+adminOsehi.status = "Married";
+adminOsehi.date = "25th of December";
+adminOsehi.adminId = 24;
+console.log();
+console.log("===full name===");
+adminOsehi.PrintFullName();
+console.log();
+console.log();
+console.log("===complete details====");
+adminOsehi.PrintAllUserInformation();
