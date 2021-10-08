@@ -13,6 +13,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var input = require("prompt-sync")();
 var User = /** @class */ (function () {
     function User(name, age, gender) {
         this.name = name;
@@ -43,6 +44,7 @@ var Admin = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Admin.prototype.PrintAllUserInformation = function () {
+        //method overiding
         if (this.adminId !== undefined) {
             console.log("Admin Id is " + this.adminId);
         }
@@ -116,3 +118,63 @@ console.log();
 console.log();
 console.log("===complete details====");
 adminOsehi.PrintAllUserInformation();
+console.log();
+console.log();
+console.log("==================fill in your details==================");
+//requesting user input
+var selection = input("select 1 for User and 2 for Admin   ");
+var newUser;
+var newAdmin;
+if (selection == 1) {
+    var selectFirstName = input("Please enter your Fisrt Name   ");
+    var selectLastName = input("please enter your Last Name  ");
+    var selectAge = input("please enter your Age   ");
+    var selectGender = input("select a Gender, (m/f)   ");
+    if (selectGender == "m") {
+        selectGender = "male";
+    }
+    else if (selectGender == "f") {
+        selectGender = "female";
+    }
+    var selectStatus = input("enter your Marital Status   ");
+    var selectDOB = input("enter your Date Of Birth   ");
+    newUser = new User({ firstName: selectFirstName, lastName: selectLastName }, selectAge, selectGender);
+    newUser.status = selectStatus;
+    newUser.date = selectDOB;
+}
+else if (selection == 2) {
+    var adminId = input("please enter admin Id");
+    if (adminId == 10) {
+        var selectFirstName = input("Please enter your Fisrt Name   ");
+        var selectLastName = input("please enter your Last Name  ");
+        var selectAge = input("please enter your Age   ");
+        var selectGender = input("select a Gender, (m/f)   ");
+        if (selectGender == "m") {
+            selectGender = "male";
+        }
+        else if (selectGender == "f") {
+            selectGender = "female";
+        }
+        var selectStatus = input("enter your Marital Status   ");
+        var selectDOB = input("enter your Date Of Birth   ");
+        newAdmin = new Admin({ firstName: selectFirstName, lastName: selectLastName }, selectAge, selectGender);
+        newAdmin.adminId = adminId;
+        newAdmin.status = selectStatus;
+        newAdmin.date = selectDOB;
+    }
+    else {
+        console.log("invalid admin id");
+    }
+}
+var closeProgram = input("do you want to view your details y/n ");
+if (closeProgram == "y") {
+    if (selection == 1) {
+        newUser.PrintAllUserInformation();
+    }
+    else {
+        newAdmin.PrintAllUserInformation();
+    }
+}
+else {
+    console.log("have a nice day");
+}

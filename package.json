@@ -1,0 +1,22 @@
+{
+  "name": "typescriptprojects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "classwork.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Johnnycake01/TypeScriptPractice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Johnnycake01/TypeScriptPractice/issues"
+  },
+  "homepage": "https://github.com/Johnnycake01/TypeScriptPractice#readme",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
